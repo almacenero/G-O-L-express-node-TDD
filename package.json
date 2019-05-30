@@ -1,0 +1,19 @@
+{
+  "name": "express-jasmine-g-o-l",
+  "version": "1.0.0",
+  "description": "Game Of Live JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node spec",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Yasser Quintana",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "jasmine": "^3.4.0",
+    "jasmine-node": "^3.0.0",
+    "request": "^2.88.0"
+  }
+}
