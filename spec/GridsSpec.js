@@ -1,4 +1,4 @@
-const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('./../src/app/gameGrid');
+const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('../src/pub/app/gameGrid');
 
 describe("RamdomGrid Test", function() {  
   const result = gridRandom(); 
