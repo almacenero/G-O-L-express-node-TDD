@@ -42,8 +42,8 @@ const countNeighbors = (grid, x, y) => {
 };
   const fieldSize = 400;
   const cellSize = fieldSize / CellsInRow;
+
 const drawGrid = (ctx, grid) => {
-  
   ctx.strokeStyle = 'red';
   grid.map((val,row,array)=>{
     grid.map((val,col,array)=>{
