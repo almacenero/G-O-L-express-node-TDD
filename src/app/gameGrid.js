@@ -1,4 +1,5 @@
 
+
 const CellsInRow = 30
 
 const gridRandom = () => {
@@ -6,10 +7,10 @@ const gridRandom = () => {
   const myNewArray = myGrid.map((value,row,array) => {
    array[row] = new Array(CellsInRow)
     return array.map((value,col,array) => {
-     return array[row][col] =  Math.floor(Math.random() * 2);
+     return array[row][col] = Math.floor(Math.random() * 2);
     })
   })
-  return myNewArray;
+ return myNewArray;
 }
 
 const NextGeneration = (grid) => {
@@ -42,11 +43,10 @@ const countNeighbors = (grid, x, y) => {
   add -= grid[x][y];
   return add;
 };
-
-const fieldSize = 500;
-const cellSize = fieldSize / CellsInRow; 
-
+  const fieldSize = 400;
+  const cellSize = fieldSize / CellsInRow;
 const drawGrid = (ctx, grid) => {
+  
   ctx.strokeStyle = 'red';
   grid.map((val,row,array)=>{
     grid.map((val,col,array)=>{

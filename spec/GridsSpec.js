@@ -1,42 +1,33 @@
 var {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('./../src/app/gameGrid');
 
-  describe("RamdomGrid Test", function() {  
+describe("RamdomGrid Test", function() {  
   const result = gridRandom(); 
-    it(" Fail test , myGrid array length it be > 0", function() {    
+   it(" Grid array initialization", function() {
+    expect(result.length).toEqual(30);
+  });  
+ /* it(" Grid array range ", function() {
+    expect(result[0].length).toBeTruthy()
+  }); */
+  it(" Fail test , myGrid array length it be > 0", function() {    
       const myGrid = new Array(10)
       expect(myGrid.length).not.toBe(0);
     }); 
-
-    it(" Fail test , grid not to be null", function() {
-      
+  it(" Fail test , grid not to be null", function() {
       expect(result).not.toBeNull();
     }); 
 
-    it(" Success test , grid return array", function() {
-      
+  it(" Success test , grid return a value", function() {
       expect(result).toBeDefined();
     }); 
 });
 
-/* describe("NextGrid Test", function() {  
+describe("NextGrid Test", function() {  
   const grid = [];
-    it(" Fail test , net grid not to be 0", function() {
-      
-      const result = NextGeneration(grid); 
-      expect(result).not.toBe(0);
-    }); 
-
-    it(" Fail test , net grid not to be null", function() {
-      
-      const result = NextGeneration(grid); 
-      expect(result).not.toBeNull();
-    }); 
-
+  const result = NextGeneration(grid);  
+  
     it(" Success test , grid return next grid", function() {
-      const result = NextGeneration(grid) 
-      expect(result).toBeDefined();
+      expect(result).toBeDefined()
     });
-   
 });
 
 describe("CountNeighbors Test", function() {  
@@ -97,4 +88,4 @@ describe("Gen Test", function() {
       const result = genOfGrid(ctx, grid) 
       expect(result).not.toBeDefined();
     });
-});  */
+}); 
