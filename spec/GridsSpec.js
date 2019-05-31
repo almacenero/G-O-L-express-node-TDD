@@ -7,7 +7,7 @@ describe("RamdomGrid Test", function() {
   });  
  /* it(" Grid array range ", function() {
     expect(result[0].length).toBeTruthy()
-  }); */
+  });  */
   it(" Fail test , myGrid array length it be > 0", function() {    
       const myGrid = new Array(10)
       expect(myGrid.length).not.toBe(0);

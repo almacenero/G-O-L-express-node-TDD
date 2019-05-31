@@ -1,14 +1,11 @@
 
-
 const CellsInRow = 30
 
 const gridRandom = () => {
   const myGrid = new Array(CellsInRow)
-  const myNewArray = myGrid.map((value,row,array) => {
-   array[row] = new Array(CellsInRow)
-    return array.map((value,col,array) => {
-     return array[row][col] = Math.floor(Math.random() * 2);
-    })
+  const myNewArray = myGrid.map(itemRow => {
+    itemRow = new Array(CellsInRow)
+    return itemRow.map(itemCol => itemCol = Math.floor(Math.random() * 2))
   })
  return myNewArray;
 }
