@@ -1,4 +1,4 @@
-var {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('./../src/app/gameGrid');
+const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('./../src/app/gameGrid');
 
 describe("RamdomGrid Test", function() {  
   const result = gridRandom(); 
@@ -6,7 +6,7 @@ describe("RamdomGrid Test", function() {
     expect(result.length).toEqual(30);
   });  
  /* it(" Grid array range ", function() {
-    expect(result[0].length).toBeTruthy()
+    expect(result[0][0] > 0 && result[0][0] < 1).toBeTruthy()
   });  */
   it(" Fail test , myGrid array length it be > 0", function() {    
       const myGrid = new Array(10)
