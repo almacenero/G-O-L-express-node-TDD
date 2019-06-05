@@ -60,7 +60,7 @@ const countNeighbors = (grid, x, y) => {
   
   const genOfGrid = (ctx, grid) => {
     ctx.clearRect(0, 0, fieldSize, fieldSize);
-    console.log("imploement :",drawGrid )
+    //console.log("imploement :",drawGrid )
     drawGrid(ctx, grid);
     const gridOfNextGeneration = NextGeneration(grid);
     setTimeout(() => {

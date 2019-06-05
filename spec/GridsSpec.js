@@ -73,7 +73,6 @@ describe("GenOfGrid Test", function() {
     clearRect: () => ""
   }; 
   const gameGrid = require('../src/pub/app/gameGrid');
-  console.log("mi grid",gameGrid)
   beforeEach(function(){
    
     spyOn(ctx, "clearRect")
@@ -82,14 +81,30 @@ describe("GenOfGrid Test", function() {
  
   it(" ctx.clearRect test...", function() {
       genOfGrid(ctx, gridR) 
-      expect(ctx.clearRect).toHaveBeenCalled()
       expect(ctx.clearRect).toHaveBeenCalledWith(0, 0, 600, 600)
   }); 
   
-  fit(" Calls drawGrid test...", function() {
+  it(" Calls drawGrid test...", function() {
     console.log("gen grid: ", gameGrid.drawGrid)
     gameGrid.genOfGrid(ctx, gridR) 
       expect(gameGrid.drawGrid).toHaveBeenCalled()
-}); 
+  }); 
   
 }); 
+
+describe("Test settTimeout in genOfGrid", function() {
+  let timerCallback;
+	  beforeEach(function() {
+    timerCallback = jasmine.createSpy("timerCallback");
+    jasmine.clock().install();
+  });
+	  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
+	fit("causes a timeout to be called synchronously", function() {
+    setTimeout(function() {
+      timerCallback();
+    }, 100);
+    expect(timerCallback).toHaveBeenCalled();
+  });
+});
