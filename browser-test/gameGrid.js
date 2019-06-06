@@ -63,12 +63,12 @@ const countNeighbors = (grid, x, y) => {
     drawGrid(ctx, grid);
     const gridOfNextGeneration = NextGeneration(grid);
     setTimeout(() => {
-      //console.log("Estoy entrando en el setTimeOut")
+     // console.log("Estoy entrando en el setTimeOut")
       requestAnimationFrame(() => genOfGrid(ctx, gridOfNextGeneration));
       }, 1000 / 10); 
     }; 
 
 
- module.exports = {
+/*  module.exports = {
   gridRandom, NextGeneration, countNeighbors, drawGrid, genOfGrid
-} 
+}  */

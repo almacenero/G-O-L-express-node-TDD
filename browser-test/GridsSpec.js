@@ -1,4 +1,4 @@
-const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('../src/pub/app/gameGrid');
+//const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('../src/pub/app/gameGrid');
 
 const gridR = gridRandom(); 
 const myGrid = [[ 0, 1, 0, 1 ]]
