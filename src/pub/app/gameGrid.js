@@ -22,7 +22,6 @@ const NextGeneration = (grid) => {
       nextGrid[row][col] = value;  
     })
   })
-  console.log("nextGrid return: ", nextGrid)
   return nextGrid
 }
 
@@ -38,8 +37,7 @@ const countNeighbors = (grid, x, y) => {
       add += grid[row][col];
     }
   }
-  add -= grid[x][y];
-  console.log("catidad de vecis: ",add) 
+  add -= grid[x][y]; 
   return add;
 };
 
