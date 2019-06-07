@@ -17,11 +17,12 @@ const NextGeneration = (grid) => {
      nextGrid[row].forEach((val,col,array)=>{
       const value = grid[row][col];
       const neighbors = countNeighbors(grid, row , col)
-      if(value === 0 && neighbors === 3)   nextGrid[row][col] = 1;
-      if(value === 1 && (neighbors < 2 || neighbors > 3)) nextGrid[row][col] = 0;
+      if(value === 0 && neighbors === 3)  return nextGrid[row][col] = 1;
+      if(value === 1 && (neighbors < 2 || neighbors > 3)) return nextGrid[row][col] = 0;
       nextGrid[row][col] = value;  
     })
   })
+  console.log("nextGrid return: ", nextGrid)
   return nextGrid
 }
 
@@ -37,7 +38,8 @@ const countNeighbors = (grid, x, y) => {
       add += grid[row][col];
     }
   }
-  add -= grid[x][y]; 
+  add -= grid[x][y];
+  console.log("catidad de vecis: ",add) 
   return add;
 };
 
@@ -62,12 +64,13 @@ const countNeighbors = (grid, x, y) => {
     ctx.clearRect(0, 0, fieldSize, fieldSize);
     drawGrid(ctx, grid);
     const gridOfNextGeneration = NextGeneration(grid);
-    setTimeout(() => {
+     setTimeout(() => {
       //console.log("Estoy entrando en el setTimeOut")
-      requestAnimationFrame(() => genOfGrid(ctx, gridOfNextGeneration));
-      }, 1000 / 10); 
+     requestAnimationFrame(() => genOfGrid(ctx, gridOfNextGeneration));
+      }, 100); 
     }; 
 
+  
 
  module.exports = {
   gridRandom, NextGeneration, countNeighbors, drawGrid, genOfGrid

@@ -1,19 +1,26 @@
-const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid } = require('../src/pub/app/gameGrid');
+const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid} = require('../src/pub/app/gameGrid');
 
 const gridR = gridRandom(); 
-const myGrid = [[ 0, 1, 0, 1 ]]
-//const myGrid = [ [ 0, 1, 0, 1 ], [ 0, 0, 1, 1 ],[ 0, 0,0, 1 ] ,[ 1, 0, 1, 1 ],[ 1, 0, 1, 1 ] ,[ 0, 0,0, 1 ] ,[ 1, 0, 1, 1 ],[ 1, 0, 1, 1 ]   ]
+const myGrid = [[ 0, 1, 0, 1 ], [ 0, 0, 1, 1 ],[ 1, 0, 1, 1 ]]
+const myGridfour= [ [ 0, 1, 0, 1 ], [ 0, 0, 1, 1 ],[ 0, 0,0, 1 ] ,[ 1, 0, 1, 1 ] ]
+const mysNextGird= [ [ 0, 1, 0, 0 ], [ 0, 0, 0, 1 ], [ 0, 1, 0, 0 ], [ 0, 1, 0, 0 ] ]
+//var estado siguiente
+describe("Initial State", function(){
+  fit("NextGen return", function(){
+    expect(NextGeneration(myGridfour)).toEqual(mysNextGird)
+  })
+  
+});
+
 describe("RamdomGrid Test", function() {  
   it(" Grid array initialization", function() {
     expect(gridR.length).toEqual(30);
   });  
+
  it(" Grid array range ", function() {
     expect(gridR[0][0] >= 0 && gridR[0][0] <= 1).toBeTruthy()
-  }); 
-  it(" Fail test , myGrid array length it be > 0", function() {    
-      const myGrid = new Array(10)
-      expect(myGrid.length).not.toBe(0);
-    }); 
+  });
+
   it(" Fail test , grid not to be null", function() {
       expect(gridR).not.toBeNull();
     }); 
@@ -84,20 +91,20 @@ describe("GenOfGrid Test", function() {
       expect(ctx.clearRect).toHaveBeenCalledWith(0, 0, 600, 600)
   }); 
   
-  it(" Calls drawGrid test...", function() {
+  /* it(" Calls drawGrid test...", function() {
     console.log("gen grid: ", gameGrid.drawGrid)
     gameGrid.genOfGrid(ctx, gridR) 
       expect(gameGrid.drawGrid).toHaveBeenCalled()
-  }); 
+  }); */ 
   
 }); 
 
-describe("Test settTimeout in genOfGrid", function() {
+/* describe("Test settTimeout in genOfGrid", function() {
  
-  const window = {
+   const window = {
     setTimeout: () => "",
-    requestAnimationFrame: () => ""
-  }; 
+    requestAnimationFrame: requestAnimationFrame
+  };  
   const ctx = {
     strokeStyle: () => "white",
     fillRect: () => "",
@@ -117,7 +124,8 @@ describe("Test settTimeout in genOfGrid", function() {
   fit("test setTimeout run", function(){
    
     genOfGrid(ctx, gridR);
-    jasmine.clock().tick(100);
+    
+    jasmine.clock().tick(110);
     expect(window.requestAnimationFrame).toHaveBeenCalled();
   });
-});
+});  */
