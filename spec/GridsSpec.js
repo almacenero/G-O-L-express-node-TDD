@@ -2,8 +2,16 @@ const {gridRandom, NextGeneration, countNeighbors,drawGrid, genOfGrid} = require
 
 const gridR = gridRandom(); 
 const myGrid = [[ 0, 1, 0, 1 ], [ 0, 0, 1, 1 ],[ 1, 0, 1, 1 ]]
-const myGridfour= [ [ 0, 1, 0, 1 ], [ 0, 0, 1, 1 ],[ 0, 0,0, 1 ] ,[ 1, 0, 1, 1 ] ]
-const mysNextGird= [ [ 0, 1, 0, 0 ], [ 0, 0, 0, 1 ], [ 0, 1, 0, 0 ], [ 0, 1, 0, 0 ] ]
+const myGridfour= [ 
+  [ 0, 1, 0, 1 ], 
+  [ 0, 0, 1, 1 ],
+  [ 0, 0,0, 1 ] ,
+  [ 1, 0, 1, 1 ] ]
+const mysNextGird= [ 
+[ 0, 1, 0, 0 ], 
+[ 0, 0, 0, 1 ], 
+[ 0, 1, 0, 0 ], 
+[ 0, 1, 0, 0 ] ]
 //var estado siguiente
 describe("Initial State", function(){
   fit("NextGen return", function(){
